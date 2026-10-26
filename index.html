@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Kpanou | Développeur Web & Full-Stack Junior</title>
+    
+    <!-- Meta SEO & Open Graph (Partage LinkedIn / WhatsApp) -->
+    <meta name="description" content="Portfolio de Marcos Kpanou, étudiant en L3 Informatique spécialisation Développement Full-Stack à CODA (Orléans). Projets PHP, JS, TypeScript, APIs REST/GraphQL & SQL.">
+    <meta property="og:title" content="Marcos Kpanou - Portfolio Full-Stack">
+    <meta property="og:description" content="Découvrez mes projets académiques et mes compétences en développement web full-stack.">
+    <meta property="og:type" content="website">
+
+    <!-- CSS Modulaires -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/skills.css">
+    <link rel="stylesheet" href="css/components/projects.css">
+    <link rel="stylesheet" href="css/components/timeline.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- FontAwesome (Icônes Web) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!--  HEADER / NAVIGATION  -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar__content">
+            <a href="#hero" class="navbar__logo">
+                <span class="logo-accent">M</span>K<span class="logo-dot">.</span>
+            </a>
+
+            <nav class="navbar__nav" id="nav-menu">
+                <ul class="navbar__list">
+                    <li><a href="#hero" class="navbar__link active">Accueil</a></li>
+                    <li><a href="#skills" class="navbar__link">Compétences</a></li>
+                    <li><a href="#projects" class="navbar__link">Projets</a></li>
+                    <li><a href="#academic" class="navbar__link">Parcours</a></li>
+                    <li><a href="#contact" class="navbar__link btn-nav-contact">Me contacter</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar__actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Changer le thème">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="nav-toggle" class="mobile-toggle" aria-label="Ouvrir le menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!--  HERO SECTION  -->
+    <section class="hero" id="hero">
+        <div class="container hero__grid">
+            <div class="hero__text">
+                <div class="badge badge--status">
+                    <span class="status-dot"></span> Recherche de stage & opportunités Full-Stack
+                </div>
+                <h1 class="hero__title">
+                    Bonjour, je suis <br>
+                    <span class="text-gradient">Marcos Kpanou</span>
+                </h1>
+                <h2 class="hero__subtitle">Développeur Web & Full-Stack Junior</h2>
+                <p class="hero__description">
+                    Étudiant en BAC+3 Informatique à l'École CODA (Orléans). Passionné par la conception d'applications robustes, de la modélisation des bases de données jusqu'à l'interface utilisateur.
+                </p>
+
+                <div class="hero__buttons">
+                    <a href="assets/Marcos_Kpanou_CV.pdf.pdf" download class="btn btn--primary">
+                        <i class="fa-solid fa-download"></i> Télécharger mon CV
+                    </a>
+                    <a href="#contact" class="btn btn--outline">
+                        <i class="fa-solid fa-paper-plane"></i> Me contacter
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__card">
+                <div class="profile-frame">
+                    <img src="assets/images/profile.jpg" alt="Marcos Kpanou" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-fallback">MK</div>
+                </div>
+                <div class="profile-info">
+                    <h3>Marcos Kpanou</h3>
+                    <p>L3 Informatique — CODA Orléans</p>
+                    <div class="tags-container">
+                        <span class="tag">PHP / JS</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Express.js</span>
+                        <span class="tag">SQL / MongoDB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  SECTION COMPÉTENCES  -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Mes Compétences</h2>
+                <p class="section-subtitle">Les technologies et outils que j'utilise au quotidien</p>
+            </div>
+
+            <!-- Onglets de filtrage -->
+            <div class="skills-tabs">
+                <button class="tab-btn active" data-tab="fullstack">Full-Stack & APIs</button>
+                <button class="tab-btn" data-tab="databases">Bases de Données</button>
+                <button class="tab-btn" data-tab="tools">Outils & Environnement</button>
+            </div>
+
+            <!-- Contenu des Onglets -->
+            <div class="skills-content">
+                <!-- Tab 1: Full-Stack -->
+                <div class="tab-pane active" id="tab-fullstack">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fa-brands fa-html5 skill-icon"></i>
+                            <h4>HTML5 & CSS3</h4>
+                            <span class="skill-level">Avancé</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-js skill-icon"></i>
+                            <h4>JavaScript ES6+</h4>
+                            <span class="skill-level">Intermédiaire</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-php skill-icon"></i>
+                            <h4>PHP</h4>
+                            <span class="skill-level">Intermédiaire</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-node-js skill-icon"></i>
+                            <h4>Express.js</h4>
+                            <span class="skill-level">Bases / Intermédiaire</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-code skill-icon"></i>
+                            <h4>TypeScript</h4>
+                            <span class="skill-level">Bases solides</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-python skill-icon"></i>
+                            <h4>Python</h4>
+                            <span class="skill-level">Intermédiaire</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-diagram-project skill-icon"></i>
+                            <h4>GraphQL</h4>
+                            <span class="skill-level">Intermédiaire</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Databases -->
+                <div class="tab-pane" id="tab-databases">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fa-solid fa-database skill-icon"></i>
+                            <h4>PostgreSQL</h4>
+                            <span class="skill-level">Intermédiaire</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-server skill-icon"></i>
+                            <h4>MySQL / MariaDB</h4>
+                            <span class="skill-level">Intermédiaire</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-leaf skill-icon"></i>
+                            <h4>MongoDB Atlas</h4>
+                            <span class="skill-level">Intermédiaire</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Tools -->
+                <div class="tab-pane" id="tab-tools">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fa-brands fa-github skill-icon"></i>
+                            <h4>Git & GitHub</h4>
+                            <span class="skill-level">Utilisation régulière</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-code-merge skill-icon"></i>
+                            <h4>VS Code</h4>
+                            <span class="skill-level">Environnement principal</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-desktop skill-icon"></i>
+                            <h4>Laragon / XAMPP</h4>
+                            <span class="skill-level">Serveur Local</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-solid fa-cubes skill-icon"></i>
+                            <h4>VirtualBox</h4>
+                            <span class="skill-level">Virtualisation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PROJETS -->
+<section class="section projects" id="projects">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Mes Projets Académiques & Professionnels</h2>
+            <p class="section-subtitle">Découvrez quelques-unes de mes réalisations full-stack</p>
+        </div>
+
+        <div class="projects-slider-wrapper">
+            <button class="slider-btn prev-btn" id="slider-prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+
+            <div class="projects-track" id="projects-track">
+                
+                <!-- Carte Projet : Tendly (Confidentiel / Soutenance) -->
+                <article class="project-card">
+                    <div class="project-card__header">
+                        <span class="project-category">Santé / Social</span>
+                        <span class="status-badge status--dev">Projet de Soutenance</span>
+                    </div>
+                    <h3 class="project-title">Veille Bienveillante (Tendly)</h3>
+                    <p class="project-desc">
+                        Plateforme de veille pour les proches et les aidants, conçue pour répondre aux enjeux de canicules et de vieillissement[cite: 2]. Architecture sécurisée sous Node.js et TypeScript[cite: 2].
+                    </p>
+                    <div class="project-techs">
+                        <span>Node.js</span><span>TypeScript</span><span>Docker</span><span>Git</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn-case-study" data-project="tendly">
+                            <i class="fa-solid fa-circle-info"></i> Étude de cas
+                        </button>
+                        <span class="btn-github confidential-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--text-secondary); cursor: not-allowed; opacity: 0.8;">
+                            <i class="fa-solid fa-lock"></i> Confidentiel (Soutenance)
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Carte Projet 1 : Mediconnet -->
+                <article class="project-card">
+                    <div class="project-card__header">
+                        <span class="project-category">Santé / E-Santé</span>
+                        <span class="status-badge status--dev">En développement</span>
+                    </div>
+                    <h3 class="project-title">Application de Téléconsultation (Mediconnet)</h3>
+                    <p class="project-desc">
+                        Application web médicale permettant la gestion des dossiers de téléconsultation avec accès rapide par QR Code et authentification sécurisée.
+                    </p>
+                    <div class="project-techs">
+                        <span>PHP</span><span>JavaScript</span><span>MySQL</span><span>HTML/CSS</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn-case-study" data-project="mediconnet">
+                            <i class="fa-solid fa-circle-info"></i> Étude de cas
+                        </button>
+                        <a href="https://github.com/K-marcos01/Mediconnet_App" target="_blank" rel="noopener" class="btn-github">
+                            <i class="fa-brands fa-github"></i> Code Source
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Carte Projet 2 : E-Tool -->
+                <article class="project-card">
+                    <div class="project-card__header">
+                        <span class="project-category">E-Commerce</span>
+                        <span class="status-badge status--dev">En développement</span>
+                    </div>
+                    <h3 class="project-title">Site E-Commerce (E-Tool)</h3>
+                    <p class="project-desc">
+                        Plateforme d'achat en ligne avec double interface (panneau d'administration pour la gestion de produits et espace client fluide).
+                    </p>
+                    <div class="project-techs">
+                        <span>PHP</span><span>JavaScript</span><span>MySQL</span><span>CSS3</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn-case-study" data-project="etool">
+                            <i class="fa-solid fa-circle-info"></i> Étude de cas
+                        </button>
+                        <a href="https://e-tool.rf.gd" target="_blank" rel="noopener" class="btn-demo">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Démo Live
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Carte Projet 3 : LabGenius -->
+                <article class="project-card">
+                    <div class="project-card__header">
+                        <span class="project-category">Bio-Informatique</span>
+                        <span class="status-badge status--done">Terminé</span>
+                    </div>
+                    <h3 class="project-title">Site de Synthèse ADN/ARN (LabGenius)</h3>
+                    <p class="project-desc">
+                        Outil web scientifique complet intégrant un séquenceur de brin ADN/ARN, une bibliothèque d'acides aminés et une interface analytique.
+                    </p>
+                    <div class="project-techs">
+                        <span>PHP</span><span>JavaScript</span><span>MySQL</span><span>HTML/CSS</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn-case-study" data-project="labgenius">
+                            <i class="fa-solid fa-circle-info"></i> Étude de cas
+                        </button>
+                        <a href="https://github.com/K-marcos01/healys-portal" target="_blank" rel="noopener" class="btn-github">
+                            <i class="fa-brands fa-github"></i> Code Source
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Carte Projet 4 : Codons -->
+                <article class="project-card">
+                    <div class="project-card__header">
+                        <span class="project-category">Bio-Informatique</span>
+                        <span class="status-badge status--done">Terminé</span>
+                    </div>
+                    <h3 class="project-title">Recherche d'Acides Aminés</h3>
+                    <p class="project-desc">
+                        Plateforme de conversion et de recherche d'acides aminés à partir de codons génétiques avec système d'authentification utilisateur.
+                    </p>
+                    <div class="project-techs">
+                        <span>PHP</span><span>HTML5</span><span>CSS3</span><span>MySQL</span>
+                    </div>
+                    <div class="project-actions">
+                        <button class="btn-case-study" data-project="codons">
+                            <i class="fa-solid fa-circle-info"></i> Étude de cas
+                        </button>
+                        <a href="https://github.com/K-marcos01" target="_blank" rel="noopener" class="btn-github">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <button class="slider-btn next-btn" id="slider-next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Structure globale de la Modale (À placer juste ici dans le HTML) -->
+    <div class="modal" id="project-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fermer">&times;</button>
+            <h2 id="modal-title">Titre de l'étude de cas</h2>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Le contenu dynamique s'affichera ici -->
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--  PARCOURS ACADÉMIQUE  -->
+    <section class="section academic" id="academic">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Parcours Académique</h2>
+                <p class="section-subtitle">Ma formation en informatique et sciences</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026 - 2027</span>
+                        <h3>BAC +3 en Informatique</h3>
+                        <h4>École d'informatique CODA (Orléans)</h4>
+                        <p>Spécialisation Développement Full-Stack : architecture web, APIs modernes, bases de données et bonnes pratiques de développement.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - 2026</span>
+                        <h3>BAC +2 en Génie Informatique et IA</h3>
+                        <h4>École Canadienne de Management (ECAM)</h4>
+                        <p>Mention : <strong>Bien</strong>. Algorithmique avancée, structures de données, bases de l'intelligence artificielle et développement orienté objet.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - 2025</span>
+                        <h3>BAC +1 en Génie Informatique et IA</h3>
+                        <h4>École Canadienne de Management (ECAM)</h4>
+                        <p>Mention : <strong>Bien</strong>. Fondamentaux de la programmation, réseaux, architecture des ordinateurs et langages du web.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2023</span>
+                        <h3>Baccalauréat Série C (Scientifique)</h3>
+                        <h4>Complexe Scolaire Christ-Roi</h4>
+                        <p>Mention : <strong>Assez-bien</strong>. Solide formation en mathématiques et sciences physiques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  MODALES ÉTUDES DE CAS  -->
+    <!-- Modale Mediconnet -->
+    <div class="modal" id="modal-mediconnet">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Étude de cas : Mediconnet (Téléconsultation)</h2>
+            <div class="modal-body">
+                <h3><i class="fa-solid fa-bullseye"></i> Objectif du projet</h3>
+                <p>Faciliter l'accès au dossier médical d'un patient lors d'une téléconsultation d'urgence grâce à une identification instantanée par QR Code.</p>
+                
+                <h3><i class="fa-solid fa-gears"></i> Architecture & Conception</h3>
+                <p>Développement sous architecture MVC native en PHP. Séparation claire entre les contrôleurs de logique métier et la vue interface utilisateur.</p>
+
+                <h3><i class="fa-solid fa-lightbulb"></i> Défis techniques</h3>
+                <ul>
+                    <li>Génération dynamique et sécurisée de QR Codes uniques rattachés à chaque identifiant patient.</li>
+                    <li>Gestion de la confidentialité et sécurisation de la session utilisateur.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale E-Tool -->
+    <div class="modal" id="modal-etool">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Étude de cas : Site E-Commerce E-Tool</h2>
+            <div class="modal-body">
+                <h3><i class="fa-solid fa-bullseye"></i> Objectif du projet</h3>
+                <p>Créer un magasin en ligne performant doté d'un catalogue produit fluide pour l'acheteur et d'un back-office complet pour le gestionnaire de stock.</p>
+                
+                <h3><i class="fa-solid fa-gears"></i> Fonctionnalités clés</h3>
+                <p>Interface Administrateur (CRUD Produits, gestion du stock) et Interface Client (Panier dynamique, recherche et filtres).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale LabGenius -->
+    <div class="modal" id="modal-labgenius">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Étude de cas : LabGenius (Séquenceur ADN/ARN)</h2>
+            <div class="modal-body">
+                <h3><i class="fa-solid fa-bullseye"></i> Objectif du projet</h3>
+                <p>Mettre à disposition des étudiants et chercheurs un outil en ligne d'analyse, de transcription et de traduction de séquences génétiques.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Codons -->
+    <div class="modal" id="modal-codons">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Étude de cas : Recherche d'Acides Aminés</h2>
+            <div class="modal-body">
+                <h3><i class="fa-solid fa-bullseye"></i> Objectif du projet</h3>
+                <p>Permettre la conversion rapide d'une séquence de triplets de nucléotides (codons) en acides aminés correspondants.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--  FOOTER & CONTACT  -->
+    <footer class="footer" id="contact">
+        <div class="container footer__grid">
+            <div class="footer__about">
+                <a href="#hero" class="navbar__logo">
+                    <span class="logo-accent">M</span>K<span class="logo-dot">.</span>
+                </a>
+                <p>Marcos J. Kpanou — Développeur Web Junior & Full-Stack</p>
+                <p class="location"><i class="fa-solid fa-location-dot"></i> Orléans, France</p>
+            </div>
+
+            <div class="footer__contact">
+                <h3>Me contacter directement</h3>
+                <div class="contact-links">
+                    <a href="mailto:kpanoumarcos07@gmail.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i> kpanoumarcos07@gmail.com
+                    </a>
+                    <a href="mailto:marcos.kpanou@coda-student.school" class="contact-item">
+                        <i class="fa-solid fa-graduation-cap"></i> marcos.kpanou@coda-student.school
+                    </a>
+                    <a href="https://wa.me/33759054273" target="_blank" rel="noopener" class="contact-item whatsapp-link">
+                        <i class="fa-brands fa-whatsapp"></i> +33 7 59 05 42 73
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__socials">
+                <h3>Retrouvez-moi sur</h3>
+                <a href="https://github.com/K-marcos01" target="_blank" rel="noopener" class="social-btn">
+                    <i class="fa-brands fa-github"></i> Mon GitHub (K-marcos01)
+                </a>
+            </div>
+        </div>
+
+        <div class="footer__bottom text-center">
+            <p>&copy; 2026 Marcos Kpanou. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript Principal (ES6 Module) -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

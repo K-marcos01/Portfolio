@@ -1,0 +1,92 @@
+/*  RESPONSIVE DESIGN (MÉDIA QUERIES)  */
+
+@media screen and (max-width: 992px) {
+    .hero__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero__description {
+        margin: 0 auto 2rem auto;
+    }
+
+    .hero__buttons {
+        justify-content: center;
+    }
+
+    .hero__card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Menu Mobile */
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .navbar__nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-secondary);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s ease;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 999;
+    }
+
+    .navbar__nav.active {
+        left: 0;
+    }
+
+    .navbar__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .navbar__link {
+        font-size: 1.25rem;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.85rem;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-dot {
+        left: 4px;
+    }
+
+    .timeline-item {
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero__title {
+        font-size: 2.1rem;
+    }
+
+    .project-card {
+        min-width: 280px;
+    }
+}
