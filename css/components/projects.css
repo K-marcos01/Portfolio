@@ -1,28 +1,21 @@
-/*  COMPOSANT : PROJETS  */
-.projects-slider-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
+/*  COMPOSANT : PROJETS (ASYMÉTRIQUE & INGÉNIERIE) ==================== */
 
 .projects-track {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem 0.5rem;
-    scrollbar-width: none; /* Firefox */
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.projects-track::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+@media screen and (max-width: 768px) {
+    .projects-track {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
-    min-width: 320px;
-    max-width: 360px;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 1.75rem;
@@ -30,14 +23,26 @@
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-    flex-shrink: 0;
+    position: relative;
+}
+
+/* --- Mise en valeur du Projet Phare (Tendly) sur toute la largeur --- */
+.project-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-hover) 100%);
+    border-color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+    .project-card.featured {
+        grid-column: span 1;
+    }
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
-    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-glow);
 }
 
 .project-card__header {
@@ -48,44 +53,56 @@
 }
 
 .project-category {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
     color: var(--accent-color);
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: monospace;
 }
 
 .status-badge {
     font-size: 0.75rem;
-    padding: 0.25rem 0.6rem;
-    border-radius: 50px;
-    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    font-family: monospace;
 }
 
 .status--dev {
-    background-color: rgba(234, 179, 8, 0.15);
+    background-color: rgba(234, 179, 8, 0.1);
     color: #eab308;
-    border: 1px solid rgba(234, 179, 8, 0.3);
+    border: 1px solid rgba(234, 179, 8, 0.2);
 }
 
 .status--done {
-    background-color: rgba(16, 185, 129, 0.15);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    background-color: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.status--confidential {
+    background-color: rgba(139, 148, 158, 0.1);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
 }
 
 .project-title {
     font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
 .project-desc {
+    font-size: 0.92rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.5;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
+/* Badges de technologies discrets et précis */
 .project-techs {
     display: flex;
     flex-wrap: wrap;
@@ -94,79 +111,81 @@
 }
 
 .project-techs span {
-    background-color: var(--bg-card);
-    color: var(--text-primary);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
     font-size: 0.75rem;
-    font-weight: 500;
+    font-family: monospace;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    background-color: var(--bg-primary);
     border: 1px solid var(--border-color);
+    color: var(--text-secondary);
 }
 
+/* Couleurs authentiques et douces pour les technos */
+.tech-node { color: #339933; border-color: rgba(51, 153, 51, 0.3); }
+.tech-ts { color: #3178C6; border-color: rgba(49, 120, 198, 0.3); }
+.tech-docker { color: #2496ED; border-color: rgba(36, 150, 237, 0.3); }
+.tech-git { color: #F05032; border-color: rgba(240, 80, 50, 0.3); }
+.tech-php { color: #8892BF; border-color: rgba(119, 123, 180, 0.3); }
+.tech-js { color: #D4B800; border-color: rgba(247, 223, 30, 0.3); }
+.tech-mysql { color: #4479A1; border-color: rgba(68, 121, 161, 0.3); }
+.tech-html { color: #E34F26; border-color: rgba(227, 79, 38, 0.3); }
+
+/* Alignement parfait des actions */
 .project-actions {
     display: flex;
-    gap: 0.5rem;
-    margin-top: auto;
-}
-
-.btn-case-study, .btn-github, .btn-demo {
-    padding: 0.5rem 0.75rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: inline-flex;
+    gap: 0.75rem;
     align-items: center;
-    gap: 0.4rem;
-    transition: var(--transition);
+    margin-top: auto;
+    flex-wrap: wrap;
 }
 
 .btn-case-study {
-    background-color: var(--bg-card);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    background-color: var(--accent-glow);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
 }
 
 .btn-case-study:hover {
-    background-color: var(--bg-card-hover);
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.btn-github, .btn-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.btn-github:hover, .btn-demo:hover {
+    border-color: var(--accent-color);
     color: var(--accent-color);
 }
 
-.btn-github {
-    background-color: #24292e;
-    color: #ffffff;
-}
-
-.btn-github:hover {
-    opacity: 0.9;
-}
-
-.btn-demo {
-    background: var(--accent-gradient);
-    color: #ffffff;
-}
-
-.btn-demo:hover {
-    opacity: 0.9;
-}
-
-/* Boutons de contrôle du Slider */
-.slider-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-    display: flex;
+.confidential-badge {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
-    flex-shrink: 0;
-}
-
-.slider-btn:hover {
-    background-color: var(--accent-color);
-    color: #ffffff;
+    gap: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
 }

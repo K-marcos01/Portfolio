@@ -15,8 +15,8 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
+    position: relative;
 }
 
 a {
@@ -109,4 +109,49 @@ button {
 .section-subtitle {
     color: var(--text-secondary);
     font-size: 1.1rem;
+}
+
+/*  ARRIÈRE-PLAN ORGANIQUE & LUMINEUX  */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(2, 132, 199, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, transparent 40%, rgba(56, 189, 248, 0.02) 50%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- ANIMATION REVEAL AU SCROLL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ligne de séparation organique entre les sections */
+.section {
+    position: relative;
+}
+
+.section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0.2;
 }

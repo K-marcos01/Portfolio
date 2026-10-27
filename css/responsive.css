@@ -1,4 +1,4 @@
-/*  RESPONSIVE DESIGN (MÉDIA QUERIES)  */
+/* ==================== RESPONSIVE DESIGN (MÉDIA QUERIES) ==================== */
 
 @media screen and (max-width: 992px) {
     .hero__grid {
@@ -22,9 +22,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    /* Menu Mobile */
+    /* 1. Menu Burger Corrigé & Fluide */
     .mobile-toggle {
-        display: flex;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
     }
 
     .navbar__nav {
@@ -34,12 +36,15 @@
         width: 100%;
         height: calc(100vh - 70px);
         background-color: var(--bg-secondary);
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        transition: left 0.3s ease;
-        border-bottom: 1px solid var(--border-color);
+        justify-content: flex-start;
+        padding-top: 3rem;
+        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-lg);
         z-index: 999;
+        border-bottom: 1px solid var(--border-color);
     }
 
     .navbar__nav.active {
@@ -49,21 +54,69 @@
     .navbar__list {
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
+        width: 100%;
     }
 
     .navbar__link {
         font-size: 1.25rem;
     }
 
-    .hero__title {
-        font-size: 2.5rem;
+    /* 2. Refonte générale des sections sur mobile */
+    .section {
+        padding: 3.5rem 0;
     }
 
-    .section-title {
-        font-size: 1.85rem;
+    .slider-btn {
+        display: none; /* Masquer les flèches du slider sur mobile */
     }
 
+    /* --- Carrousel Tactile Fluide (Swipe Horizontal) pour les Projets --- */
+    .projects-slider-wrapper {
+        position: relative;
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
+
+    .projects-track {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+
+    /* Masquer la barre de défilement pour un rendu épuré */
+    .projects-track::-webkit-scrollbar {
+        display: none;
+    }
+    .projects-track {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .project-card {
+        flex: 0 0 85%;
+        min-width: 85%;
+        scroll-snap-align: center;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+    }
+
+    /* Grille de compétences sur 2 colonnes bien proportionnées */
+    .skills-progress-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.85rem;
+    }
+
+    /* Timeline académique plus compacte sur mobile */
     .timeline::before {
         left: 10px;
     }
@@ -83,10 +136,15 @@
     }
 
     .hero__title {
-        font-size: 2.1rem;
+        font-size: 2rem;
     }
 
-    .project-card {
-        min-width: 280px;
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    /* Sur très petits écrans, les compétences passent sur 1 colonne */
+    .skills-progress-grid {
+        grid-template-columns: 1fr !important;
     }
 }
