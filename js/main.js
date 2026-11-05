@@ -37,3 +37,22 @@ function initScrollReveal() {
 
     reveals.forEach((el) => observer.observe(el));
 }
+// Animation d'apparition des sections au scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // On n'observe qu'une seule fois
+            }
+        });
+    }, {
+        threshold: 0.15 // Déclenche quand 15% de la section est visible
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
