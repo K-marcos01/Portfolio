@@ -1,4 +1,4 @@
-/*  BASE STYLES & RESET  */
+/* ==================== BASE STYLES & RESET ==================== */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -91,9 +91,10 @@ button {
     transform: translateY(-2px);
 }
 
-/* Sections générales */
+/* Sections générales & Ligne de séparation */
 .section {
     padding: 5rem 0;
+    position: relative;
 }
 
 .section-header {
@@ -111,7 +112,18 @@ button {
     font-size: 1.1rem;
 }
 
-/*  ARRIÈRE-PLAN ORGANIQUE & LUMINEUX  */
+.section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0.2;
+}
+
+/* Arrière-plan organique */
 body::before {
     content: "";
     position: fixed;
@@ -127,42 +139,16 @@ body::before {
     z-index: -1;
 }
 
-/* --- ANIMATION REVEAL AU SCROLL --- */
-.reveal {
+/* ==================== ANIMATIONS DE DÉFILEMENT ==================== */
+.section {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Ligne de séparation organique entre les sections */
-.section {
-    position: relative;
-}
-
-.section::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 15%;
-    width: 70%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-    opacity: 0.2;
-}
-/* ==================== ANIMATIONS DE DÉFILEMENT (BASE.CSS) ==================== */
-.section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .section.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
